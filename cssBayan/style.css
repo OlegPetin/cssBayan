@@ -5,33 +5,55 @@
 .header {
     text-align: center;    
   }
+  .accordion_block {
+    color: blue;
+  }
 .accordion {
     margin: 0;
     margin-bottom: 1.5rem;
     padding: 0;
     list-style: none;
+    
   }
   .accordion_block:hover .accordion_trigger {
-    color: blue;
+    color: black;
+  }
+  .accordion_block:hover .accordion_trigger::after {
+    display: inline;
   }
   .accordion_item {
     border-bottom: 1px solid #5a95fd;
   }
-  .accordion_item:hover .accordion_trigger {
+    .accordion_item:hover .accordion_trigger {
     display: block;
   }
+  .accordion_item:hover .accordion_target {
+    position: static;
+    overflow: visible;
+    width: auto;
+    height: auto;
+    animation: fadeIn ease-in 0.5s;
+  }
+  .accordion_item:hover .accordion_trigger::after {
+    content: '-'; }
+  
   /**
   * Элемент label который запускает открыть/закрыть.
   */
   .accordion_trigger {
     display: block;
     background-color: #ccd8b9;
-    color: #000000;
     font-weight: 700;
     cursor: pointer;
     padding: 1.2em;
+    position: relative;
   }
   .accordion_trigger::after { 
+    display: none;
+    margin-right: 1%;
+    position: absolute;
+    right: 0;
+    font-size: 1.5rem;
     content: '+';
  }
  :checked + .accordion_trigger::after {
