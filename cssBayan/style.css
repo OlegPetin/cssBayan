@@ -1,7 +1,9 @@
 .wrapper {
-    max-width: 1920px;
     margin: 0 5% 0 5%;
-    background-color: aqua;
+    background-color: rgb(139, 148, 148);
+  }
+  hr {
+    margin: 0;
   }
   @media (max-width: 1980px) {
     img{
@@ -12,9 +14,6 @@
     }
   }
   @media (max-width: 820px) {
-    .wrapper {
-        background-color: #b0b300;
-    }
     img {
         width: 70%;
     }
@@ -23,9 +22,7 @@
     }
   }
   @media (max-width: 320px) {
-    .wrapper {
-        background-color: #00b309;
-    }
+
     img {
         width: 100%;
     }
@@ -49,21 +46,14 @@
   .accordion_block:hover .accordion_trigger {
     color: black;
   }
-
-  /* .accordion_item {
-    border-bottom: 1px solid #5a95fd;
-  } */
   .accordion_item:hover .accordion_target {
+    display: block;
     position: static;
     overflow: visible;
     width: auto;
     height: auto;
     animation: fadeIn ease-in 0.5s;
   }
-   
-  /**
-  * Элемент label который запускает открыть/закрыть.
-  */
   .accordion_trigger {
     display: flex;
     justify-content: space-between;
@@ -74,48 +64,34 @@
     position: relative;
   }
 
-  /* меняем цвет фона у активного переключателя */
-   
   .accordion_toggle:checked ~ .accordion_trigger {
     color: #000000;
   }
   .accordion_toggle:checked ~ .accordion_trigger .add,
-  .accordion_toggle:hover ~ .accordion_trigger .add {
+  .accordion_item:hover .accordion_trigger .add {
     display: none;
   }
   .accordion_toggle:checked ~ .accordion_trigger .close,
-  .accordion_toggle:hover ~ .accordion_trigger .close {
+  .accordion_item:hover .accordion_trigger .close {
     display: inline;
   }
     .close {
     display: none;
   }
-   
-  /**
-   * эти элементы radio/checkbox всегда должны быть скрыты.
-   */
+
   .accordion_toggle {
     display: none;
   }
-  /**
-  * скрытое содержание аккордеона.
-  */
+
   .accordion_target {
     border: 0;
     clip: rect(0 0 0 0);
-    /* height: 1px;
-    margin: -1px; */
     overflow: hidden;
     padding: 0;
-    /* position: absolute; */
     display: none;
-    /* position: static; */
-    /* width: 1px; */
     text-align: center;
   }
-  /**
-  * когда переключатель checked на radio/checkbox, показать содержимое аккордеона.
-  */    
+   
   .accordion_toggle:checked ~ .accordion_target {
     display: block;
     overflow: visible;
@@ -124,10 +100,9 @@
     padding: 1.2rem;
     width: auto;
     height: auto;
-  /* задержка появления  функция анимации */
     animation:fadeIn ease-in 1s; 
   }
-  /* анимация при появлении блоков с содержанием */
+
   @keyframes fadeIn {
       from { opacity: 0; }
   to { opacity: 1 }
