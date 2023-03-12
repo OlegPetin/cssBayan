@@ -1,0 +1,120 @@
+.wrapper {
+    margin: 0 10% 0 10%;
+    background-color: rgb(139, 148, 148);
+  }
+  hr {
+    margin: 0;
+  }
+  @media (max-width: 1980px) {
+    img{
+        width: 30%;
+    }
+    body{
+      font-size: 1.5em;
+    }
+  }
+  @media (max-width: 820px) {
+    img {
+        width: 70%;
+    }
+    body{
+      font-size: large;
+    }
+  }
+  @media (max-width: 320px) {
+    img {
+        width: 100%;
+    }
+    body{
+      font-size: larger;
+    }
+  }
+.header {
+    text-align: center;    
+  }
+  .accordion_block {
+    color: blue;
+  }
+.accordion {
+    margin: 0;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    list-style: none;
+  }
+  .accordion_block:hover .accordion_trigger {
+    color: black;
+  }
+  .accordion_block:hover .add {
+   display: inline;;
+  }
+
+  .accordion_item:hover .accordion_target {
+    display: block;
+    position: static;
+    overflow: visible;
+    width: auto;
+    height: auto;
+    animation: fadeIn ease-in 0.5s;
+    cursor: pointer;
+  }
+  .accordion_trigger {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ccd8b9;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 1.2em;
+    position: relative;
+  }
+
+  .accordion_toggle:checked ~ label .accordion_trigger {
+    color: #000000;
+  }
+
+  .accordion_block:hover .accordion_toggle:checked ~ label .accordion_trigger .close {
+    display: inline;
+  }
+  .accordion_toggle:checked ~ label .accordion_trigger .add,
+  .accordion_item:hover .accordion_trigger .add {
+    transition: 0.5s;
+    display: none;
+  }
+
+  .accordion_item:hover .accordion_trigger .close {
+    transition: 0.5s;
+    display: inline;
+  }
+    .close, .add {
+    margin: 0;
+    display: none;
+    
+  }
+
+  .accordion_toggle {
+    display: none;
+  }
+
+  .accordion_target {
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    padding: 0;
+    display: none;
+    text-align: center;
+  }
+   
+  .accordion_toggle:checked ~ label .accordion_target {
+    display: block;
+    overflow: visible;
+    clip: auto;
+    margin: auto;
+    padding: 1.2rem;
+    width: auto;
+    height: auto;
+    animation:fadeIn ease-in 1s; 
+  }
+
+  @keyframes fadeIn {
+      from { opacity: 0; }
+  to { opacity: 1 }
+  }
